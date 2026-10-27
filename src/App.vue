@@ -107,6 +107,10 @@ function planPreview(plan) {
   <div class="app-shell">
     <div class="ambient ambient-one"></div>
     <div class="ambient ambient-two"></div>
+    <div class="pixel-world" aria-hidden="true">
+      <span class="voxel voxel-grass"></span><span class="voxel voxel-diamond"></span><span class="voxel voxel-purple"></span>
+      <i class="pixel-star star-a">✦</i><i class="pixel-star star-b">✦</i><i class="pixel-star star-c">✦</i>
+    </div>
 
     <header class="nav-wrap">
       <nav class="nav container">
@@ -133,7 +137,7 @@ function planPreview(plan) {
     <main>
       <section id="inicio" class="hero container">
         <div class="hero-copy reveal">
-          <div class="eyebrow"><i></i> DISEÑO PARA CREADORES DE MINECRAFT</div>
+          <div class="eyebrow"><i></i> BANNEGFX CRAFTING STUDIO · ONLINE</div>
           <h1>Haz que tu próximo video sea <span>imposible de ignorar.</span></h1>
           <p>Thumbnails hechas a medida para contar una historia, destacar en el feed y convertir una buena idea en un clic.</p>
           <div class="hero-actions">
@@ -148,12 +152,16 @@ function planPreview(plan) {
         </div>
 
         <div class="hero-visual reveal">
-          <div class="visual-chip chip-top">✦ Impacto visual</div>
+          <div class="visual-chip chip-top">✦ ITEM LEGENDARIO</div>
           <div class="hero-stack">
+            <span class="pixel-corner corner-a"></span><span class="pixel-corner corner-b"></span><span class="pixel-corner corner-c"></span><span class="pixel-corner corner-d"></span>
             <img :src="portfolio[Math.min(42, portfolio.length - 1)].src" alt="Ejemplo de thumbnail Minecraft" />
             <div class="image-caption"><span>DISEÑADO POR <b>BANNEGFX</b></span><span class="live-dot">PORTFOLIO REAL</span></div>
           </div>
-          <div class="visual-chip chip-bottom"><b>+CTR</b><span>Diseñado para destacar</span></div>
+          <div class="visual-chip chip-bottom"><b>+CTR</b><span>ENCANTAMIENTO VISUAL</span></div>
+          <div class="hotbar" aria-label="Barra de inventario decorativa">
+            <span class="active">⛏</span><span>◆</span><span>✦</span><span>▣</span><span>◈</span><span>✧</span><span>◇</span><span>▦</span><span>★</span>
+          </div>
         </div>
       </section>
 
@@ -163,6 +171,7 @@ function planPreview(plan) {
           <span>THUMBNAILS MINECRAFT</span><i>◆</i><span>COMPOSICIÓN 3D</span><i>◆</i><span>COLOR GRADING</span><i>◆</i><span>STORYTELLING VISUAL</span><i>◆</i>
         </div>
       </section>
+      <div class="block-divider" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
 
       <section id="portfolio" class="section container">
         <div class="section-heading reveal">
@@ -195,7 +204,7 @@ function planPreview(plan) {
       <section id="planes" class="pricing-section">
         <div class="container">
           <div class="section-heading centered reveal">
-            <div><span class="section-kicker">PLANES SIN COMPLICACIONES</span><h2>Más contenido. <em>Mejor precio.</em></h2></div>
+            <div><span class="section-kicker">ELIGE TU PACK</span><h2>Craftea tu contenido. <em>Sube de nivel.</em></h2></div>
             <p>Elige el paquete que encaja con tu ritmo. Todos incluyen diseño personalizado y entrega digital.</p>
           </div>
           <div class="pricing-grid">
