@@ -95,6 +95,12 @@ function closeCheckout() {
 function scrollToId(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 }
+
+function planPreview(plan) {
+  const previewCount = Math.min(plan.amount, 5)
+  const offset = { 1: 116, 5: 248, 10: 365, 15: 487, 20: 603 }[plan.amount] || 0
+  return Array.from({ length: previewCount }, (_, index) => portfolio[(offset + index * 7) % portfolio.length])
+}
 </script>
 
 <template>
@@ -196,6 +202,18 @@ function scrollToId(id) {
             <article v-for="plan in plans" :key="plan.id" class="price-card reveal" :class="{ featured: plan.featured }">
               <span v-if="plan.featured" class="popular">MÁS ELEGIDO</span>
               <div class="plan-head"><span>{{ plan.label }}</span><i>{{ String(plan.amount).padStart(2, '0') }}</i></div>
+              <div class="plan-visual" :class="`visual-${Math.min(plan.amount, 5)}`">
+                <img
+                  v-for="(thumb, index) in planPreview(plan)"
+                  :key="thumb.id"
+                  :src="thumb.src"
+                  :alt="`Ejemplo ${index + 1} del plan de ${plan.amount} thumbnails`"
+                  loading="lazy"
+                  :style="{ '--index': index, '--total': Math.min(plan.amount, 5) }"
+                />
+                <span v-if="plan.amount > 5" class="stack-count">+{{ plan.amount - 5 }}</span>
+                <span class="visual-volume">{{ plan.amount }} diseño{{ plan.amount > 1 ? 's' : '' }}</span>
+              </div>
               <h3>x{{ plan.amount }} <small>Thumbnail{{ plan.amount > 1 ? 's' : '' }}</small></h3>
               <div class="price"><sup>$</sup>{{ plan.price }}<span>USD</span></div>
               <p>{{ plan.note }}</p>
