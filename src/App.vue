@@ -203,12 +203,6 @@ function planPreview(plan) {
       <div class="block-divider" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
 
       <section id="portfolio" class="section container">
-        <div class="section-biome-scene scene-gallery" aria-hidden="true">
-          <div class="pixel-tree overworld-only tree-left"><i></i><i></i></div>
-          <div class="pixel-mob creeper overworld-only"><span></span></div>
-          <div class="obsidian-tower end-only"><i></i></div>
-          <div class="pixel-mob enderman end-only"><span></span></div>
-        </div>
         <div class="section-heading reveal">
           <div><span class="section-kicker">TRABAJOS SELECCIONADOS</span><h2>El feed es una batalla.<br><em>Entra para ganar.</em></h2></div>
           <p>Explora diseños reales. Cada pieza muestra a su creador y el cliente para quien fue realizada.</p>
@@ -237,12 +231,6 @@ function planPreview(plan) {
       </section>
 
       <section id="planes" class="pricing-section">
-        <div class="section-biome-scene scene-pricing" aria-hidden="true">
-          <div class="pixel-tree overworld-only tree-right"><i></i><i></i></div>
-          <div class="pixel-mob pig overworld-only"><span></span></div>
-          <div class="chorus-grove end-only"><i></i><i></i><i></i></div>
-          <div class="end-crystal end-only"><i></i></div>
-        </div>
         <div class="container">
           <div class="section-heading centered reveal">
             <div><span class="section-kicker">ELIGE TU PACK</span><h2>Craftea tu contenido. <em>Sube de nivel.</em></h2></div>
@@ -279,12 +267,6 @@ function planPreview(plan) {
       </section>
 
       <section id="proceso" class="section process container">
-        <div class="section-biome-scene scene-process" aria-hidden="true">
-          <div class="pixel-tree overworld-only tree-small"><i></i><i></i></div>
-          <div class="pixel-mob cow overworld-only"><span></span></div>
-          <div class="end-portal end-only"><i></i></div>
-          <div class="pixel-mob enderman enderman-two end-only"><span></span></div>
-        </div>
         <div class="section-heading reveal">
           <div><span class="section-kicker">DE LA IDEA AL FEED</span><h2>Un proceso claro.<br><em>Un resultado potente.</em></h2></div>
           <p>La demo simula el recorrido completo de una compra. El pago no es real todavía.</p>
@@ -298,10 +280,6 @@ function planPreview(plan) {
       </section>
 
       <section class="cta container reveal">
-        <div class="section-biome-scene scene-cta" aria-hidden="true">
-          <div class="overworld-hills overworld-only"><i></i><i></i></div>
-          <div class="ender-dragon end-only"><i></i><i></i><span></span></div>
-        </div>
         <div><span class="section-kicker">¿TU PRÓXIMO VIDEO YA TIENE IDEA?</span><h2>Hagamos que tenga <em>presencia.</em></h2></div>
         <button class="primary-button" @click="scrollToId('planes')">Comenzar ahora <span>↗</span></button>
       </section>
