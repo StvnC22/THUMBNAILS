@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, ref, watch } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import portfolio from './data/portfolio.json'
 import { saveOrder } from './db'
 
@@ -22,6 +22,9 @@ const visibleCount = ref(18)
 const orderState = ref('form')
 const newOrderId = ref('')
 const form = ref({ name: '', email: '', channel: '', notes: '' })
+const heroIndex = ref(0)
+const heroItems = portfolio.filter((item, index, items) => items.findIndex(candidate => candidate.client === item.client) === index)
+let heroTimer
 
 const clients = computed(() => ['Todos', ...new Set(portfolio.map(item => item.client))])
 const filteredPortfolio = computed(() => portfolio.filter(item => {
@@ -46,7 +49,24 @@ onMounted(() => {
     entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('revealed'))
   }, { threshold: 0.12 })
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el))
+  startHeroRotation()
 })
+
+onBeforeUnmount(() => clearInterval(heroTimer))
+
+function startHeroRotation() {
+  clearInterval(heroTimer)
+  heroTimer = setInterval(() => changeHero(1, false), 4200)
+}
+
+function pauseHeroRotation() {
+  clearInterval(heroTimer)
+}
+
+function changeHero(direction, restart = true) {
+  heroIndex.value = (heroIndex.value + direction + heroItems.length) % heroItems.length
+  if (restart) startHeroRotation()
+}
 
 function addToCart(plan) {
   const existing = cart.value.find(item => item.id === plan.id)
@@ -152,13 +172,18 @@ function planPreview(plan) {
         </div>
 
         <div class="hero-visual reveal">
-          <div class="visual-chip chip-top">✦ ITEM LEGENDARIO</div>
-          <div class="hero-stack">
+          <div class="hero-stack" @mouseenter="pauseHeroRotation" @mouseleave="startHeroRotation">
             <span class="pixel-corner corner-a"></span><span class="pixel-corner corner-b"></span><span class="pixel-corner corner-c"></span><span class="pixel-corner corner-d"></span>
-            <img :src="portfolio[Math.min(42, portfolio.length - 1)].src" alt="Ejemplo de thumbnail Minecraft" />
-            <div class="image-caption"><span>DISEÑADO POR <b>BANNEGFX</b></span><span class="live-dot">PORTFOLIO REAL</span></div>
+            <Transition name="hero-swap" mode="out-in">
+              <img :key="heroItems[heroIndex].id" :src="heroItems[heroIndex].src" :alt="`Thumbnail de Minecraft para ${heroItems[heroIndex].client}`" />
+            </Transition>
+            <div class="image-caption"><span>DISEÑADO POR <b>BANNEGFX</b> · PARA <b>{{ heroItems[heroIndex].client }}</b></span><span class="live-dot">PORTFOLIO REAL</span></div>
+            <div class="hero-slider-controls">
+              <button aria-label="Thumbnail anterior" @click="changeHero(-1)">‹</button>
+              <span>{{ String(heroIndex + 1).padStart(2, '0') }} / {{ String(heroItems.length).padStart(2, '0') }}</span>
+              <button aria-label="Siguiente thumbnail" @click="changeHero(1)">›</button>
+            </div>
           </div>
-          <div class="visual-chip chip-bottom"><b>+CTR</b><span>ENCANTAMIENTO VISUAL</span></div>
           <div class="hotbar" aria-label="Barra de inventario decorativa">
             <span class="active">⛏</span><span>◆</span><span>✦</span><span>▣</span><span>◈</span><span>✧</span><span>◇</span><span>▦</span><span>★</span>
           </div>
