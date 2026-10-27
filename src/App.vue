@@ -130,6 +130,9 @@ function planPreview(plan) {
     <div class="pixel-world" aria-hidden="true">
       <span class="voxel voxel-grass"></span><span class="voxel voxel-diamond"></span><span class="voxel voxel-purple"></span>
       <i class="pixel-star star-a">✦</i><i class="pixel-star star-b">✦</i><i class="pixel-star star-c">✦</i>
+      <span class="overworld-cloud cloud-a"></span><span class="overworld-cloud cloud-b"></span>
+      <span class="end-island island-a"></span><span class="end-island island-b"></span>
+      <span class="chorus-plant chorus-a"><i></i><i></i><i></i></span><span class="chorus-plant chorus-b"><i></i><i></i></span>
     </div>
 
     <header class="nav-wrap">
@@ -158,6 +161,7 @@ function planPreview(plan) {
       <section id="inicio" class="hero container">
         <div class="hero-copy reveal">
           <div class="eyebrow"><i></i> BANNEGFX CRAFTING STUDIO · ONLINE</div>
+          <div class="biome-indicator"><small>BIOMA ACTUAL</small><strong>{{ theme === 'light' ? 'OVERWORLD' : 'THE END' }}</strong></div>
           <h1>Haz que tu próximo video sea <span>imposible de ignorar.</span></h1>
           <p>Thumbnails hechas a medida para contar una historia, destacar en el feed y convertir una buena idea en un clic.</p>
           <div class="hero-actions">
