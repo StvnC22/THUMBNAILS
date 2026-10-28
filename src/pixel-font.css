@@ -1,4 +1,4 @@
-/* Final production override. Every visible string uses the same Minecraft font. */
+/* Final production override. Every visible string uses Minecraft regular/bold. */
 :root,
 html,
 body,
@@ -12,6 +12,6 @@ textarea,
 select,
 option,
 ::placeholder {
-  font-family: 'Minecraftia', 'Minecraft', monospace !important;
+  font-family: 'Minecraft', system-ui, sans-serif !important;
   font-synthesis: none;
 }
