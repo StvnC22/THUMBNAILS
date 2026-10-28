@@ -1,40 +1,17 @@
-/* Production font override: keep the complete interface in the pixel Minecraft typeface. */
+/* Final production override. Every visible string uses the same Minecraft font. */
+:root,
+html,
 body,
+#app,
+#app *,
+#app *::before,
+#app *::after,
 button,
 input,
 textarea,
 select,
-.app-shell,
-.nav,
-.nav-links,
-.brand,
-.hero,
-.hero-copy,
-.hero-proof,
-.gallery-tools,
-.thumb-card,
-.price-card,
-.process-grid,
-.cta,
-.cart-drawer,
-.modal,
-.footer {
+option,
+::placeholder {
   font-family: 'Minecraftia', 'Minecraft', monospace !important;
-}
-
-h1,
-h2,
-h3,
-h4,
-p,
-span,
-strong,
-small,
-label,
-button,
-input,
-textarea,
-select,
-a {
-  font-family: inherit;
+  font-synthesis: none;
 }
