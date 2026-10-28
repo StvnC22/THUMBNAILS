@@ -162,7 +162,7 @@ function planPreview(plan) {
         <div class="hero-copy reveal">
           <div class="eyebrow"><i></i> BANNEGFX CRAFTING STUDIO · ONLINE</div>
           <div class="biome-indicator"><small>BIOMA ACTUAL</small><strong>{{ theme === 'light' ? 'OVERWORLD' : 'THE END' }}</strong></div>
-          <h1>Haz que tu próximo video sea <span>imposible de ignorar.</span></h1>
+          <h1>Hola <span>Buenos Dias.</span></h1>
           <p>Thumbnails hechas a medida para contar una historia, destacar en el feed y convertir una buena idea en un clic.</p>
           <div class="hero-actions">
             <button class="primary-button" @click="scrollToId('planes')">Ver planes <span>↗</span></button>
