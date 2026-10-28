@@ -1,5 +1,5 @@
-@font-face{font-family:'Minecraft';src:url('/fonts/minecraft-regular.otf') format('opentype');font-display:swap}
-@font-face{font-family:'Minecraft';src:url('/fonts/minecraft-bold.otf') format('opentype');font-weight:700;font-display:swap}
+@font-face{font-family:'Minecraft';src:url('./assets/fonts/minecraft-regular.otf') format('opentype');font-weight:400;font-display:swap}
+@font-face{font-family:'Minecraft';src:url('./assets/fonts/minecraft-bold.otf') format('opentype');font-weight:700;font-display:swap}
 @font-face{font-family:'Minecraftia';src:url('/fonts/minecraftia.ttf') format('truetype');font-display:swap}
 
 :root{--bg:#0b0717;--surface:#151027;--surface-2:#1c1533;--text:#f8f5ff;--muted:#a9a1bd;--line:rgba(255,255,255,.11);--purple:#9b63ff;--purple-2:#6f3bf5;--cyan:#55d8ff;--shadow:0 30px 80px rgba(0,0,0,.35);color-scheme:dark;font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
